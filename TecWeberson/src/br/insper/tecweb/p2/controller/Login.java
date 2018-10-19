@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import br.insper.tecweb.p2.model.DAO;
 import br.insper.tecweb.p2.model.Usuarios;
 
-@WebServlet("/login")
+@WebServlet("/lon")
 public class Login extends HttpServlet { 
 
 		@Override
