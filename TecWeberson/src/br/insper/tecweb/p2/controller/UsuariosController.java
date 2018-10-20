@@ -53,9 +53,26 @@ public class UsuariosController {
 		 	//System.out.println(id_login);
 	//dao.close();
 	
-	
-	
-	
 	}
+	@RequestMapping("NewUser")
+	public String NewUser() {
+		 System.out.println("CLICK");
+		 return "NewUser";
+		 }
+	@RequestMapping("cria")
+	public String Cria(HttpServletRequest request,
+			 				HttpServletResponse response)
+			throws ServletException, IOException {
+		 	DAO dao = new DAO();
+		Usuarios pessoa = new Usuarios();
+		pessoa.setNome(request.getParameter("nome"));
+		pessoa.setLogin(request.getParameter("Login"));
+		pessoa.setSenha(request.getParameter("senha"));
+		pessoa.setEmail(request.getParameter("email"));
+
+
+		dao.adiciona(pessoa);
+		return "login";
+		 }
 }	
 

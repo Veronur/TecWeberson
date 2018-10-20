@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServletResponse;
 import br.insper.tecweb.p2.model.DAO;
 import br.insper.tecweb.p2.model.Usuarios;
 
-@WebServlet("/cria")
+@WebServlet("/CrIa")
 public class Cria extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest request,

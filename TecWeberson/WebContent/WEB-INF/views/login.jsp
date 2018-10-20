@@ -20,9 +20,9 @@ pageEncoding="UTF-8"%>
   		<input type="text" name="senha"><br>
 		<input type="submit" value="LOGIN">
 	</form>
-
-	<button onclick="window.location.href='NewUser.jsp'">Novo Usuário</button>
-
+	<form action="NewUser" method="post">
+	<input type="submit" value="Registrar"/> 
+	</form>
 
 
 </body>
