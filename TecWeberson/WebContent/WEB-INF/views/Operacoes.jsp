@@ -17,7 +17,7 @@
 	<form action="EditarUsuario" method="post">
 		Nome:<br>
   		<input type="text" name="nome"><br>
-  		Login:<br>
+  		Login: <br>
   		<input type="text" name="Login"><br>
 		Senha:<br>
   		<input type="text" name="senha"><br>

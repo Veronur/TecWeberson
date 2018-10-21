@@ -33,9 +33,11 @@ public class UsuariosController {
 		 	
 		 	Usuarios pessoa = new Usuarios();
 		 	pessoa.setLogin(request.getParameter("Login"));
+		 	//pessoa.setSenha("1");
 			pessoa.setSenha(request.getParameter("senha"));
 		 	Integer id_login=dao.login(pessoa);
 		 	Calendar lastlogin=Calendar.getInstance();
+		 	System.out.println(id_login);
 		 	
 		 	if (id_login!=null) {
 		 		//System.out.println(("certo"));
@@ -54,6 +56,7 @@ public class UsuariosController {
 	//dao.close();
 	
 	}
+	
 	@RequestMapping("NewUser")
 	public String NewUser() {
 		 System.out.println("CLICK");
@@ -96,7 +99,6 @@ public class UsuariosController {
 	DAO dao = new DAO();
 	Usuarios pessoa = new Usuarios();
 	pessoa.setId(Integer.valueOf(request.getParameter("id")));
-	
 	pessoa.setNome(request.getParameter("nome"));	
 	pessoa.setLogin(request.getParameter("Login"));	
 	pessoa.setSenha(request.getParameter("senha"));	
@@ -106,7 +108,41 @@ public class UsuariosController {
 	dao.altera(pessoa);
 	request.setAttribute("idlog", request.getParameter("id"));
 	
+	
 	return "PaginaPrincipal";
-}	
+}
+	@RequestMapping("FbLogin")
+	public String Look() {
+		return "FbLogin";
+	}
+	@RequestMapping("loginFacebook")
+	public String loginFacebook(HttpServletRequest request,
+			 				HttpServletResponse response)
+			throws ServletException, IOException {
+		 	DAO dao = new DAO();
+		 	
+		 	
+		 	Usuarios pessoa = new Usuarios();
+		 	pessoa.setLogin(request.getParameter("Login"));
+		 	pessoa.setNome(request.getParameter("Login"));
+		 	pessoa.setEmail(request.getParameter("email"));
+		 	pessoa.setSenha("1233^&75");
+			//pessoa.setSenha(request.getParameter("senha"));
+		 	Integer id_login=dao.login(pessoa);
+		 	Calendar lastlogin=Calendar.getInstance();
+		 	System.out.println(id_login);
+		 	
+		 	if (id_login!=null) {
+		 		//System.out.println(("certo"));
+		 		request.setAttribute("idlog", id_login);
+		 		request.setAttribute("timelog",lastlogin);
+		 		return "PaginaPrincipal";
+		 		//response.sendRedirect("teste.jsp"); 
+		 	}
+		 	else {
 
+				return "BadLoginFacebook";
+		 	}
+	
+}
 }
