@@ -140,7 +140,7 @@ public class DAO {
 		}
 	public void altera(Usuarios pessoa) {
 		String sql = "UPDATE Usuarios SET " +
-				"nome=?,login=?, senha=?, email=? WHERE id=?";
+				"nome=?, senha=?, email=? WHERE id=?";
 		PreparedStatement stmt = null;
 		try {
 			stmt = connection.prepareStatement(sql);
@@ -155,25 +155,19 @@ public class DAO {
 			e.printStackTrace();
 		}
 		try {
-			stmt.setString(2, pessoa.getLogin());
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		try {
-			stmt.setString(3, pessoa.getSenha());
+			stmt.setString(2, pessoa.getSenha());
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();			
 		}
 		try {
-			stmt.setString(4,pessoa.getEmail());
+			stmt.setString(3,pessoa.getEmail());
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		try {
-			stmt.setInt(5, pessoa.getId());
+			stmt.setInt(4, pessoa.getId());
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

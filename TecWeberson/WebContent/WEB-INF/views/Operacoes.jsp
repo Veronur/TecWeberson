@@ -17,13 +17,12 @@
 	<form action="EditarUsuario" method="post">
 		Nome:<br>
   		<input type="text" name="nome"><br>
-  		Login: <br>
-  		<input type="text" name="Login"><br>
-		Senha:<br>
+  		Senha: <br>
   		<input type="text" name="senha"><br>
   		Email:<br>
   		<input type="text" name="email"><br>
-  		<input type="hidden" name="id" value=<%=request.getParameter("idlog")%>><br>
+  		<input type="hidden" name="id" value=<%=request.getParameter("idlog")%>>
+  		<br>
   		<input type="submit" value="Atualizar">
 	</form>
 <h2>Remover usuario</h2>

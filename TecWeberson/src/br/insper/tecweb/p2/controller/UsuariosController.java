@@ -92,25 +92,7 @@ public class UsuariosController {
 	return "login";
 	}
 	
-	@RequestMapping("EditarUsuario")
-	public String EditarUsuario(HttpServletRequest request,
-			HttpServletResponse response)
-					throws ServletException, IOException {
-	DAO dao = new DAO();
-	Usuarios pessoa = new Usuarios();
-	pessoa.setId(Integer.valueOf(request.getParameter("id")));
-	pessoa.setNome(request.getParameter("nome"));	
-	pessoa.setLogin(request.getParameter("Login"));	
-	pessoa.setSenha(request.getParameter("senha"));	
-	pessoa.setEmail(request.getParameter("email"));
 	
-	
-	dao.altera(pessoa);
-	request.setAttribute("idlog", request.getParameter("id"));
-	
-	
-	return "PaginaPrincipal";
-}
 	@RequestMapping("FbLogin")
 	public String Look() {
 		return "FbLogin";
@@ -145,4 +127,23 @@ public class UsuariosController {
 		 	}
 	
 }
+
+	@RequestMapping("EditarUsuario")
+		public String EditarUsuario(HttpServletRequest request,
+				HttpServletResponse response)
+						throws ServletException, IOException {
+		DAO dao = new DAO();
+		Usuarios pessoa = new Usuarios();
+		pessoa.setId(Integer.valueOf(request.getParameter("id")));
+		pessoa.setNome(request.getParameter("nome"));	
+		pessoa.setSenha(request.getParameter("senha"));	
+		pessoa.setEmail(request.getParameter("email"));
+		
+		
+		dao.altera(pessoa);
+		request.setAttribute("idlog", request.getParameter("id"));
+		
+		
+		return "PaginaPrincipal";
+	}
 }
