@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServletResponse;
 import br.insper.tecweb.p2.model.DAONota;
 import br.insper.tecweb.p2.model.Notas;
 
-@WebServlet("/cria_nota")
+@WebServlet("/cria_nhta")
 public class CriaNota extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest request,
@@ -54,7 +54,7 @@ public class CriaNota extends HttpServlet {
 	try {
 		data = (Date) new SimpleDateFormat("yyyy-MM-dd").parse(prazo_final_nota);
 	} catch (ParseException e) {
-		// TODO Auto-generated catch block
+
 		e.printStackTrace();
 	}
 	Calendar dataPrazo = Calendar.getInstance();
@@ -64,19 +64,14 @@ public class CriaNota extends HttpServlet {
  	
  
 	Calendar dataCria = Calendar.getInstance();
-//	System.out.println("DATA");
-//	System.out.println(dataCria);
+
  	nota.setData_criacao(dataCria);
 	
 	
 	daoNota.adiciona(nota);
 	Integer id_login=Integer.valueOf(request.getParameter("usuario_abriu"));
 	request.setAttribute("idlog", id_login);
-//		PrintWriter out = response.getWriter();
-//		out.println("<html><body>");
-//		out.println("<script> window.location = 'PaginaPrincipal.jsp' </script>");
-//		
-//		out.println("</body></html>");
+
 	request.getRequestDispatcher("PaginaPrincipal.jsp").forward(request, response);
 		daoNota.close();
 		

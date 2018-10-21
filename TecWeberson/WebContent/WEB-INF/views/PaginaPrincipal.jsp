@@ -94,8 +94,19 @@ body{
 		<h2>Notas</h2>
 	</div>
 	<div class="botao_novo_nota">
-		<button onclick="window.location.href='NotaNova.jsp?idlog=<%=request.getAttribute("idlog")%>'">Nota Nova</button>
-		<button onclick="window.location.href='Operacoes.jsp?idlog=<%=request.getAttribute("idlog")%>'">Opções</button>
+	
+		<form action="nova_nota" method="post">
+		<input type="hidden" name="idlog" value="<%=request.getAttribute("idlog")%>">
+		<input type="submit" value="Criar Nota">
+		</form>
+	
+		<form action="Opcoes" method="post">
+		<input type="hidden" name="idlog" value="<%=request.getAttribute("idlog")%>">
+		<input type="submit" value="Opções">
+		</form>
+		
+		
+		
 	</div>
  	<div class="flex-container">
 	
@@ -134,7 +145,11 @@ body{
 				</form>
 				</div>
 				<div>
-				<button onclick="window.location.href='EditarNota.jsp?id=<%=nota.getId()%>&idlog=<%=request.getAttribute("idlog")%>'">Editar</button>
+				<form action="edita_nota" method="post">
+				<input type="hidden" name="id" value="<%=nota.getId()%>">
+			  	<input type="hidden" name="idlog" value="<%=request.getAttribute("idlog")%>">
+				<input type="submit" value="Editar">
+				</form>
 				</div>
 			</div>
 	</div>

@@ -9,7 +9,7 @@
 <body>
 <h1>Qual sua nova nota?</h1>
 <h2>Adicionar Nota</h2>
-	<form action="cria_nota" method="post">
+	<form action="CriarNota" method="post">
   		<input type="hidden" name="aberta" value="1">
   		<br>
   		<input type="hidden" name="usuario_abriu" value=<%=request.getParameter("idlog") %>>
@@ -21,7 +21,7 @@
   		<input name="cor" type="color"/>
 		Prazo:<br>
   		<input type="date" name="prazo_final_nota"><br>
-  		<input type="submit" value="Submit">
+  		<input type="submit" value="Criar">
 	</form>	
 </body>
 </html>

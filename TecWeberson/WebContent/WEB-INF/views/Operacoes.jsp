@@ -14,7 +14,7 @@
 	//System.out.println(request.getParameter("idlog"));
 %>
 <h2>Atualizar</h2>
-	<form action="atualiza" method="post">
+	<form action="EditarUsuario" method="post">
 		Nome:<br>
   		<input type="text" name="nome"><br>
   		Login:<br>
@@ -24,12 +24,12 @@
   		Email:<br>
   		<input type="text" name="email"><br>
   		<input type="hidden" name="id" value=<%=request.getParameter("idlog")%>><br>
-  		<input type="submit" value="Atualiza">
+  		<input type="submit" value="Atualizar">
 	</form>
 <h2>Remover usuario</h2>
-	<form action="remove" method="post">
+	<form action="RemoverUsuario" method="post">
   		<input type="hidden" name="id" value=<%=request.getParameter("idlog")%>><br>
-  		<input type="submit" value="Delete">
+  		<input type="submit" value="Deletar">
 	</form>
 
 </body>

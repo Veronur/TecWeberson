@@ -8,7 +8,7 @@
 </head>
 <body>
 <h2>Atualizar Nota</h2>
-	<form action="atualiza_nota" method="post">
+	<form action="edita" method="post">
 		<input type="hidden" name="aberta" value="1">
   		Titulo:<br>
   		<input type="text" name="titulo"><br>

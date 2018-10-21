@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import br.insper.tecweb.p2.model.DAONota;
 
-@WebServlet("/remove_nota")
+@WebServlet("/remove_nt")
 public class RemoveNota extends HttpServlet {
 		 @Override
 		protected void doGet(HttpServletRequest request,

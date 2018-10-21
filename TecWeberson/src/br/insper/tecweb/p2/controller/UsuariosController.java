@@ -74,5 +74,39 @@ public class UsuariosController {
 		dao.adiciona(pessoa);
 		return "login";
 		 }
+	@RequestMapping("Opcoes")
+	public String OpcoesPage() {
+		return "Operacoes";
+	}
+	@RequestMapping("RemoverUsuario")
+	public String RemoverUsuario(HttpServletRequest request,
+				HttpServletResponse response)
+						throws ServletException, IOException {
+		DAO dao = new DAO();
+		System.out.println(request.getParameter("id"));
+		dao.remove(Integer.valueOf(request.getParameter("id")));
+
+	return "login";
+	}
+	
+	@RequestMapping("EditarUsuario")
+	public String EditarUsuario(HttpServletRequest request,
+			HttpServletResponse response)
+					throws ServletException, IOException {
+	DAO dao = new DAO();
+	Usuarios pessoa = new Usuarios();
+	pessoa.setId(Integer.valueOf(request.getParameter("id")));
+	
+	pessoa.setNome(request.getParameter("nome"));	
+	pessoa.setLogin(request.getParameter("Login"));	
+	pessoa.setSenha(request.getParameter("senha"));	
+	pessoa.setEmail(request.getParameter("email"));
+	
+	
+	dao.altera(pessoa);
+	request.setAttribute("idlog", request.getParameter("id"));
+	
+	return "PaginaPrincipal";
 }	
 
+}
