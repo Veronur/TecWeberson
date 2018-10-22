@@ -4,7 +4,14 @@
 </head>
 <body>
 <center>
+
 <h1>Bem Vindo!</h1>
+<div id="google_translate_element"></div><script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'pt', includedLanguages: 'en,pt'}, 'google_translate_element');
+}
+</script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+       
 <h2>Login com Facebook</h2> 
 <script>
  // This is called with the results from from FB.getLoginStatus().

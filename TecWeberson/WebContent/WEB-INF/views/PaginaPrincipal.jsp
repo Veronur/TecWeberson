@@ -87,7 +87,19 @@ body{
 </style>
 
  <body>
- 	
+ 	<script src="https://connect.soundcloud.com/sdk/sdk-3.3.0.js"></script>
+<script>
+SC.initialize({
+  client_id: 'YOUR_CLIENT_ID'
+});
+
+// find all sounds of buskers licensed under 'creative commons share alike'
+SC.get('/tracks', {
+  q: 'buskers', license: 'cc-by-sa'
+}).then(function(tracks) {
+  console.log(tracks);
+});
+</script>
 <%@ page import="java.util.*,br.insper.tecweb.p2.model.*" %>
 
 	<div class="titulo_pagina">
@@ -108,6 +120,11 @@ body{
 		
 		
 	</div>
+	<div class="botao_novo_nota" id="google_translate_element"></div><script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'pt', includedLanguages: 'en,pt'}, 'google_translate_element');
+}
+</script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
  	<div class="flex-container">
 	
 <%
@@ -151,6 +168,7 @@ body{
 				<input type="submit" value="Editar">
 				</form>
 				</div>
+				
 			</div>
 	</div>
 <% } %>
